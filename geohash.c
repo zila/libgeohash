@@ -83,9 +83,9 @@ char* get_neighbor(char *hash, int direction) {
     char **border = is_odd ? odd_borders : even_borders;
     char **neighbor = is_odd ? odd_neighbors : even_neighbors; 
     
-    char *base = malloc(sizeof(char) * 1);
+    char *base = malloc(sizeof(char) * hash_length);
     base[0] = '\0';
-    strncat(base, hash, hash_length - 1);
+    strlcat(base, hash, hash_length - 1);
     
 	if(index_for_char(last_char, border[direction]) != -1)
 		base = get_neighbor(base, direction);
